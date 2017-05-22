@@ -1,0 +1,44 @@
+{
+   "altCtrlUnblurs": {
+      "message": "Alt+Strg drücken (in dieser Reihenfolge), um eine scharfe Darstellung zu erhalten"
+   },
+   "blurAmount": {
+      "message": "Unschärfe in Pixeln (zwischen 2 und 10):"
+   },
+   "blurAmountOutOfBounds": {
+      "message": "Fehler: Der Unschärfegrad muss eine Zahl zwischen 2 und 10 sein."
+   },
+   "defaultState": {
+      "message": "Was soll Blurbook beim Besuch von Facebook tun?"
+   },
+   "defaultState_disable": {
+      "message": "Standardmäßig nicht verschwommen darstellen"
+   },
+   "defaultState_enable": {
+      "message": "Standardmäßig verschwommen darstellen"
+   },
+   "defaultState_remember": {
+      "message": "Das Gleiche wie beim vorherigen Facebook-Besuch"
+   },
+   "developedByMe": {
+      "message": "Von \u003Ca href=\"http://axelchalon.fr\">Axel Chalon\u003C/a> entwickelt"
+   },
+   "extensionDescription": {
+      "message": "Vermeiden sie neugierege Blicke auf Facebook! Mit Strg+B schalten Sie zwischen verschwommener und scharfer Darstellung um. Mit Alt+Strg erhalten Sie eine momentane scharfe Darstellung."
+   },
+   "hoverUnblurs": {
+      "message": "Scharfe Darstellung, wenn der Mauszeiger über einer Nachricht liegt"
+   },
+   "optionsPage": {
+      "message": "Einstellungen"
+   },
+   "optionsSaved": {
+      "message": "Einstellungen gespeichert!"
+   },
+   "optionsUsage": {
+      "message": "Mit Strg+B schalten Sie auf Facebook und Messenger zwischen verschwommener und scharfer Darstellung um."
+   },
+   "save": {
+      "message": "Speichern"
+   }
+}

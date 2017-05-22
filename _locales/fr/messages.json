@@ -1,0 +1,44 @@
+{
+   "altCtrlUnblurs": {
+      "message": "Garder Alt+Ctrl (en respectant l'ordre) enfoncés enlève le floutage"
+   },
+   "blurAmount": {
+      "message": "Quantité de flou en pixels (entre 2 et 10) :"
+   },
+   "blurAmountOutOfBounds": {
+      "message": "Erreur : la quantité de flou doit être un nombre compris entre 2 et 10."
+   },
+   "defaultState": {
+      "message": "Comportement de Blurbook au chargement de Facebook"
+   },
+   "defaultState_disable": {
+      "message": "Ne pas flouter par défaut"
+   },
+   "defaultState_enable": {
+      "message": "Flouter par défaut"
+   },
+   "defaultState_remember": {
+      "message": "Se souvenir du floutage"
+   },
+   "developedByMe": {
+      "message": "Développé par \u003Ca href=\"http://axelchalon.fr\">Axel Chalon\u003C/a>"
+   },
+   "extensionDescription": {
+      "message": "Soyez à l'abri des regards indiscrets sur Facebook ! Ctrl+B floute/défloute ; Alt+Ctrl enfoncés (dans l'ordre) défloute momentanément."
+   },
+   "hoverUnblurs": {
+      "message": "Enlever le floutage des messages au survol de la souris"
+   },
+   "optionsPage": {
+      "message": "Options"
+   },
+   "optionsSaved": {
+      "message": "Options sauvegardées !"
+   },
+   "optionsUsage": {
+      "message": "Utilisation: appuyez sur Ctrl+B sur Facebook ou Messenger pour flouter ou enlever le floutage."
+   },
+   "save": {
+      "message": "Sauvegarder"
+   }
+}

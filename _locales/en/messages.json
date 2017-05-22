@@ -1,0 +1,44 @@
+{
+   "altCtrlUnblurs": {
+      "message": "Holding down Alt+Ctrl (in that specific order) unblurs"
+   },
+   "blurAmount": {
+      "message": "Amount of blur in pixels (between 2 and 10):"
+   },
+   "blurAmountOutOfBounds": {
+      "message": "Error: the amount of blur must be a number between 2 and 10."
+   },
+   "defaultState": {
+      "message": "Behaviour of Blurbook when visiting Facebook"
+   },
+   "defaultState_disable": {
+      "message": "Don't blur by default"
+   },
+   "defaultState_enable": {
+      "message": "Blur by default"
+   },
+   "defaultState_remember": {
+      "message": "Same as last time I visited Facebook"
+   },
+   "developedByMe": {
+      "message": "Developed by \u003Ca href=\"http://axelchalon.fr\">Axel Chalon\u003C/a>"
+   },
+   "extensionDescription": {
+      "message": "Stay clear of prying eyes on Facebook! Ctrl+B blurs/unblurs; holding down Alt+Ctrl (in that order) unblurs momentarily."
+   },
+   "hoverUnblurs": {
+      "message": "Unblur when the mouse is over a message"
+   },
+   "optionsPage": {
+      "message": "Options"
+   },
+   "optionsSaved": {
+      "message": "Options saved!"
+   },
+   "optionsUsage": {
+      "message": "Usage: press Ctrl+B on Facebok or Messenger to blur/unblur the messages."
+   },
+   "save": {
+      "message": "Save"
+   }
+}

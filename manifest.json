@@ -1,0 +1,24 @@
+{
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+   "content_scripts": [ {
+      "js": [ "script.js" ],
+      "matches": [ "http://www.facebook.com/*", "https://www.facebook.com/*", "http://www.messenger.com/*", "https://www.messenger.com/*" ],
+      "run_at": "document_start"
+   } ],
+   "default_locale": "en",
+   "description": "__MSG_extensionDescription__",
+   "icons": {
+      "128": "icon128.png",
+      "16": "icon16.png",
+      "48": "icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlRC32huQlg/eeNqgVT/ZE89sfmoxtRi8auzYHHangYTVG7pBsFFBsjLj6o3u/p1d9zuNti3RnJOmfN9BisBv7iRwQDfUwfwVI0vvnULs5XfzDdyL+txSjZkiFxR56gapBZs0kDr8EN8AM0iKC4M4ZjwjeNKzOzcE05JEulgekxgzE/FnWRH7hAzSIJnMY8giA2CBv6E8ILB8UcjRTx5SZFUS1sW8AAMTF2snpdbrr8nmqRSETaD/TER3kf81T0ZcULqb5vv7817/exNOSqnY7P+v4RFLWhY3T5TdfTrI/U8rVQFypk1A7Hat2C8Z1MOK181ha2xO2h38L5JPJRhzywIDAQAB",
+   "manifest_version": 2,
+   "name": "Blurbook",
+   "options_page": "options.html",
+   "permissions": [ "webRequest", "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.11"
+}

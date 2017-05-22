@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head><title>Blurbook - Options</title>
+<meta charset="utf-8">
+<style>
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure, 
+	footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+	body {
+		line-height: 1;
+	}
+	ol, ul {
+		list-style: none;
+	}
+	blockquote, q {
+		quotes: none;
+	}
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+    
+    body { padding: 50px 200px 75px 200px; background-color: #f0f0f0; display: none; /* i18n sets it to block */ position: relative; line-height: 1.4; }
+	
+	h1 { font-size: 30px; width: 650px; margin: 0px auto 30px; padding: 0 50px; }
+	form { margin-top: 100px; width: 650px; margin: 0px auto; padding: 50px 50px; color: #383838; background-color: #fff; border: 1px solid #cacaca; -webkit-border-radius: 5px; -webkit-box-shadow: 0px 1px 0px #fff; }
+    
+    form > * { display: block; margin-bottom: 50px; }
+    form > label:first-child { margin-bottom: 0px; display: inline-block; margin-right: 20px; }
+    form > button { margin-bottom: 0px; width: 100%; margin: auto; padding: 5px; font-size: 30px; }
+	
+	h2 { font-size: 20px; }
+	h1, h2 { text-align: center; }
+    
+    p#footer { color: gray; position: absolute; right: 10px; bottom: 10px; }
+    
+    fieldset { border: 1px solid black; margin-top: 35px; }
+    fieldset > * { display: block; margin-bottom: 10px; padding: 5px; text-align: bottom; }
+    fieldset legend, body > label { font-weight: bold; }
+    
+    .example { margin: 5px 0; background-color: rgb(0, 132, 255); border-radius: 18.2px; box-sizing: border-box; color: rgb(255, 255, 255); display: inline-block; font-family: "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif; font-size: 14px; height: 29px; line-height: 17.92px; padding-bottom: 6px; padding-left: 12px; padding-right: 12px; padding-top: 6px; }
+
+    em { font-style: italic; }
+    
+</style>
+</head>
+<body>
+  
+	<h1>Blurbook &mdash; {{ optionsPage }}</h1>
+
+    <form>
+    
+        <em>{{ optionsUsage }}</em>
+    
+        <!-- CTRL+B info ? -->
+    
+        <label>
+          {{ blurAmount }}
+          <input type="number" min="2" max="10" id="blurAmount">
+        </label>
+
+        <fieldset>
+            <legend>{{ defaultState }}</legend>
+
+            <label>
+              <input type="radio" name="defaultState" value="enabled" id="defaultState_enabled" id="autostart">
+              {{ defaultState_Enable }}
+            </label>
+
+            <label>
+              <input type="radio" name="defaultState" value="disabled" id="defaultState_disabled" id="disabled">
+              {{ defaultState_Disable }}
+            </label>
+
+            <label>
+              <input type="radio" name="defaultState" value="remember" id="defaultState_remember" id="remember">
+              {{ defaultState_Remember }}
+            </label>
+        </fieldset>
+
+        <label>
+          <input type="checkbox" id="hover">
+          {{ hoverUnblurs }}
+        </label>
+
+        <label>
+          <input type="checkbox" id="altctrl">
+          {{ altCtrlUnblurs }}
+        </label>
+
+        <button id="save" type="button">{{ save }}</button>
+    </form>
+   
+	<p id="footer">Blurbook – {{ developedByMe }}</p>
+   
+    <script type="text/javascript" src="options.js"></script>
+</body>
+</html>
