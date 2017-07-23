@@ -49,21 +49,25 @@ chrome.storage.sync.get({blurbook_defaultState: 'remember', blurbook_hover: true
         return style.sheet;
     })();
 
-    var FACEBOOK_CLASSES = [
-        "._5w1r", // fenêtre du bas : messages
-        "._4yng", // fenêtre du bas : code snippets 
-        "._3lk2", // fenêtre du bas : images
-        "._3cpq", // fenêtre du bas : meta (link preview)
-        "._1mf", // fenêtre du bas / full screen : message being sent by user
-        "._wu0", // full screen : code snippets
-        "._aok", // full screen : messages
-        "._4pcn", // full screen : PJ filename
-        "._2a45", // full screen : sidebar right : PJ filename
-        "._3m31", // full screen : sidebar right : pictures
-        "._15gf", // full screen : images/stickers/gifs/meta
-        "._1htf", // full screen : sidebar left : preview
-        "._1iji", // barre de notif : preview
-    ];
+    var FACEBOOK_CLASSES = {
+        textual: [
+            "._5w1r", // fenêtre du bas : messages
+            "._4yng", // fenêtre du bas : code snippets 
+            "._1mf", // fenêtre du bas / full screen : message being sent by user
+            "._wu0", // full screen : code snippets
+            "._aok", // full screen : messages
+            "._4pcn", // full screen : PJ filename
+            "._2a45", // full screen : sidebar right : PJ filename
+            "._1htf", // full screen : sidebar left : preview
+            "._1iji", // barre de notif : preview
+        ],
+        graphical: [
+            "._3lk2", // fenêtre du bas : images
+            "._3cpq", // fenêtre du bas : meta (link preview)
+            "._3m31", // full screen : sidebar right : pictures
+            "._15gf", // full screen : images/stickers/gifs/meta
+        ]
+    };
     
     // 
     var MESSENGER_CLASSES = [
@@ -78,11 +82,22 @@ chrome.storage.sync.get({blurbook_defaultState: 'remember', blurbook_hover: true
 
 	if (platform == 'facebook')
 	{
-		sheet.addRule(FACEBOOK_CLASSES.map(function(c) { return "html.bluranium " + c; }).join(", "), "-webkit-filter: blur("+items.blurbook_blurAmount+"px)", 0);
+		sheet.addRule(FACEBOOK_CLASSES.textual.map(function(c) { return "html.bluranium " + c; }).join(", "), "-webkit-filter: blur("+items.blurbook_blurAmount+"px)", 0);
+
+        // if !screen_graphical
+		//sheet.addRule(FACEBOOK_CLASSES.textual.map(function(c) { return "html.bluranium " + c; }).join(", "), "-webkit-filter: blur("+items.blurbook_blurAmount+"px)", 0);
+		// else
+        sheet.addRule(FACEBOOK_CLASSES.graphical.map(function(c) { return "html.bluranium " + c; }).join(", "), "width: 20px; height: 20px; overflow: hidden; -webkit-filter: brightness(0) blur("+items.blurbook_blurAmount+"px);", 0);
 
 		// hover
-		if (items.blurbook_hover)
-			sheet.addRule(FACEBOOK_CLASSES.map(function(c) { return "html.bluranium " + c + ":hover"; }).join(", "), "-webkit-filter: none", 0);
+		if (items.blurbook_hover) {
+			sheet.addRule(FACEBOOK_CLASSES.textual.map(function(c) { return "html.bluranium " + c + ":hover"; }).join(", "), "-webkit-filter: none", 0);
+
+            // if !screen_graphical
+			//sheet.addRule(FACEBOOK_CLASSES.graphical.map(function(c) { return "html.bluranium " + c + ":hover"; }).join(", "), "-webkit-filter: none", 0);
+			// else
+            sheet.addRule(FACEBOOK_CLASSES.graphical.map(function(c) { return "html.bluranium " + c + ":hover"; }).join(", "), "width: auto; height: auto; overflow: visible; -webkit-filter: none", 0);
+        }
 
 		// blur logo
 		sheet.addRule("html.bluranium ._2md", "-webkit-filter: blur(2px)", 0);
