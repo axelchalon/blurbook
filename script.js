@@ -52,6 +52,8 @@ chrome.storage.sync.get({blurbook_defaultState: 'remember', blurbook_hover: true
     var FACEBOOK_CLASSES = [
         "._5w1r", // fenêtre du bas : messages
         "._4yng", // fenêtre du bas : code snippets 
+        "._3lk2", // fenêtre du bas : images
+        "._3cpq", // fenêtre du bas : meta (link preview)
         "._1mf", // fenêtre du bas / full screen : message being sent by user
         "._wu0", // full screen : code snippets
         "._aok", // full screen : messages
