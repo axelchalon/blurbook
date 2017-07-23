@@ -49,31 +49,49 @@ chrome.storage.sync.get({blurbook_defaultState: 'remember', blurbook_hover: true
         return style.sheet;
     })();
 
+    var FACEBOOK_CLASSES = [
+        "._5w1r", // fenêtre du bas : messages
+        "._4yng", // fenêtre du bas : code snippets 
+        "._1mf", // fenêtre du bas / full screen : message being sent by user
+        "._wu0", // full screen : code snippets
+        "._aok", // full screen : messages
+        "._4pcn", // full screen : PJ filename
+        "._2a45", // full screen : sidebar right : PJ filename
+        "._3m31", // full screen : sidebar right : pictures
+        "._15gf", // full screen : images/stickers/gifs/meta
+        "._1htf", // full screen : sidebar left : preview
+        "._1iji", // barre de notif : preview
+    ];
+    
+    // 
+    var MESSENGER_CLASSES = [
+        "._wu0", // full screen : code snippets
+        "._2a45", // full screen : sidebar right : PJ filename
+        "._3m31", // full screen : sidebar right : pictures
+        "._1htf", // full screen : sidebar left : preview
+        "._ui9", // full screen : messages w/o images
+        "._2poz", // full screen : images (in messages)
+        "._5rp7" // full screen : message being sent by user
+    ];
+
 	if (platform == 'facebook')
 	{
-		// instant messager (fenêtres du bas), fenêtre du bas code snippets, messages full screen, messages full screen stickers/gifs/meta, messages full screen preview sidebar left, preview barre de notif, message being sent by user (fenêtre du bas), image in notification bar message preview
-		sheet.addRule("html.bluranium ._5w1r, html.bluranium ._4yng, html.bluranium ._aok, html.bluranium ._15gf, html.bluranium ._1htf, html.bluranium ._3e7u, html.bluranium .snippet.preview, html.bluranium ._1mf, html.bluranium ._56hv", "-webkit-filter: blur("+items.blurbook_blurAmount+"px)", 0);
-		// ._3e7u == gif in instant messenger
-
-		// instant et messages (message being sent by user)
-		sheet.addRule("html.bluranium ._552h textarea, html.bluranium ._1rt textarea", "-webkit-filter: blur("+items.blurbook_blurAmount+"px)", 0);
+		sheet.addRule(FACEBOOK_CLASSES.map(function(c) { return "html.bluranium " + c; }).join(", "), "-webkit-filter: blur("+items.blurbook_blurAmount+"px)", 0);
 
 		// hover
 		if (items.blurbook_hover)
-			sheet.addRule("html.bluranium ._5w1r:hover, html.bluranium ._4yng:hover, html.bluranium ._aok:hover, html.bluranium ._15gf:hover, html.bluranium ._1htf:hover, html.bluranium ._3e7u:hover, html.bluranium .snippet.preview:hover, html.bluranium ._1mf:hover, html.bluranium ._56hv:hover, html.bluranium ._552h textarea:hover, html.bluranium ._1rt textarea:hover", "-webkit-filter: none", 0);
+			sheet.addRule(FACEBOOK_CLASSES.map(function(c) { return "html.bluranium " + c + ":hover"; }).join(", "), "-webkit-filter: none", 0);
 
 		// blur logo
-		sheet.addRule("html.bluranium ._5lus", "-webkit-filter: blur(2px)", 0);
+		sheet.addRule("html.bluranium ._2md", "-webkit-filter: blur(2px)", 0);
     }
 	else // messenger
 	{
-		// code snippets, "shared pictures" right sidebar, messages preview left sidebar, messages w/o images, images (in messages), message being sent by user
-		sheet.addRule("html.bluranium ._wu0, html.bluranium ._3m31, html.bluranium ._1htf, html.bluranium ._ui9, html.bluranium ._2poz, html.bluranium ._5rp7", "-webkit-filter: blur("+items.blurbook_blurAmount+"px)", 0);
+		sheet.addRule(MESSENGER_CLASSES.map(function(c) { return "html.bluranium " + c; }).join(", "), "-webkit-filter: blur("+items.blurbook_blurAmount+"px)", 0);
 
 		// hover
 		if (items.blurbook_hover)
-			sheet.addRule("html.bluranium ._wu0:hover, html.bluranium ._3m31:hover, html.bluranium ._1htf:hover, html.bluranium ._ui9:hover, html.bluranium ._2poz:hover, html.bluranium ._5rp7:hover", "-webkit-filter: none", 0);
-
+			sheet.addRule(MESSENGER_CLASSES.map(function(c) { return "html.bluranium " + c + ":hover"; }).join(", "), "-webkit-filter: none", 0);
 	}
 
     if (items.blurbook_defaultState == 'enabled' || (items.blurbook_defaultState == 'remember' && items.blurbook_wasEnabledLastTime))
